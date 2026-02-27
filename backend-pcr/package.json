@@ -1,0 +1,31 @@
+{
+    "name": "sistema-promocion-consumo-responsable",
+    "version": "1.0.0",
+    "description": "Backend System for Responsible Consumption Promotion",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "nodemon index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "cors": "^2.8.6",
+        "dotenv": "^16.6.1",
+        "express": "^4.22.1",
+        "helmet": "^7.1.0",
+        "jsonwebtoken": "^9.0.2",
+        "mysql2": "^3.18.1",
+        "sequelize": "^6.37.7"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.2"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs"
+}
