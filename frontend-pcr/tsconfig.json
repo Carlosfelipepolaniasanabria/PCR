@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/page/ContenidoPrincipal/ContenidoPrincipal.jsx"  ],
+, "app/page/RegistroYLogin/RegistroYLogin.jsx"  ],
   "exclude": ["node_modules"]
 }
