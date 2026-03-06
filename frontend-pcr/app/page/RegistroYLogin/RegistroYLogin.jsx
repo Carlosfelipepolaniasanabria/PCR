@@ -55,23 +55,25 @@ export default function HomeContent() {
         {/* REGISTRO */}
         <div className={`${styles.formContainer} ${styles.signUp}`}>
           <form onSubmit={handleSubmit}>
-            <h1>Crear Cuenta</h1>
+            <h1>Crear cuenta</h1>
 
-            <input name="nombres" placeholder="Nombres" onChange={handleChange} />
-            <input name="apellidos" placeholder="Apellidos" onChange={handleChange} />
-            <input name="correo" type="email" placeholder="Correo" onChange={handleChange} />
-            <input name="celular" placeholder="Celular" onChange={handleChange} />
-            <input name="departamento" placeholder="Departamento" onChange={handleChange} />
-            <input name="municipio" placeholder="Municipio" onChange={handleChange} />
-            <input name="direccion" placeholder="Dirección" onChange={handleChange} />
-            <input name="barrio" placeholder="Barrio" onChange={handleChange} />
-            <input name="estrato" type="number" placeholder="Estrato" onChange={handleChange} />
-            <input name="tipo_documento" placeholder="Tipo Documento" onChange={handleChange} />
-            <input name="numero_documento" placeholder="Número Documento" onChange={handleChange} />
-            <input name="contrasena" type="password" placeholder="Contraseña" onChange={handleChange} />
+  <div className={styles.twoCol}>
+    <input placeholder="Nombres" />
+    <input placeholder="Apellidos" />
+    <input placeholder="Correo" />
+    <input placeholder="Celular" />
+    <input placeholder="Departamento" />
+    <input placeholder="Municipio" />
+    <input placeholder="Dirección" />
+    <input placeholder="Barrio" />
+    <input placeholder="Estrato" />
+    <input placeholder="Tipo Documento" />
+    <input placeholder="Número Documento" />
+    <input placeholder="Contraseña" type="password" />
+  </div>
 
-            <button type="submit">Registrarse</button>
-          </form>
+  <button>Registrarse</button>
+</form>
         </div>
 
         {/* PANEL DESLIZANTE */}

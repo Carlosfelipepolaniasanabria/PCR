@@ -38,10 +38,9 @@ import HomeContent from "./page/RegistroYLogin/RegistroYLogin";
 export default function Home() {
   return (
     <>
-      <EcoHabitsLanding />
-      <section style={{ paddingTop: 40, paddingBottom: 80 }}>
-        <HomeContent />
-      </section>
+    <EcoHabitsLanding />
+    <HomeContent />
+
     </>
   );
 }

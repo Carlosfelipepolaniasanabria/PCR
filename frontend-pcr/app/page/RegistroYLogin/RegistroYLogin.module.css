@@ -1,22 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-.wrapper{
+/* .wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 60px 0;
     font-family: 'Montserrat', sans-serif;
+} */
+
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    /* mismo espacio que la landing */
+    padding: 3% 20px 80px;
 }
 
 .container{
     background-color: #fff;
     border-radius: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
     position: relative;
     overflow: hidden;
-    width: 900px;
+
+    
+    width: 100%;
     max-width: 100%;
-    min-height: 600px;
+
+    
+    min-height: 650px;
 }
 
 .container form{
@@ -29,26 +42,40 @@
 }
 
 .container input{
-    background-color: #eee;
-    border: none;
-    margin: 8px 0;
-    padding: 10px 15px;
-    font-size: 13px;
-    border-radius: 8px;
+    background-color: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    margin: 10px 0;
+    padding: 14px 16px;      /* ✅ más alto */
+    font-size: 14px;         /* ✅ más legible */
+    border-radius: 12px;
     width: 100%;
     outline: none;
+    transition: 0.2s ease;
+}
+
+.container input:focus{
+    border-color: #57ee69;
+    box-shadow: 0 0 0 4px rgba(87, 238, 105, 0.25);
+    background-color: #ffffff;
 }
 
 .container button{
     background-color: #57ee69;
     color: #fff;
-    font-size: 12px;
-    padding: 10px 45px;
+    font-size: 14px;
+    padding: 12px 18px;
     border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    margin-top: 10px;
+    border-radius: 12px;
+    font-weight: 700;
+    margin-top: 14px;
     cursor: pointer;
+    height: 48px;
+    transition: 0.2s ease;
+}
+
+.container button:hover{
+    filter: brightness(0.95);
+    transform: translateY(-1px);
 }
 
 .hidden{
@@ -138,4 +165,22 @@
 
 .toggleRight{
     right: 0;
+}
+/* ✅ SOLO para el formulario de registro: dos columnas */
+.twoCol{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 14px;
+}
+
+/* Para que inputs ocupen 100% de su celda */
+.twoCol input{
+    margin: 0;
+}
+
+/* ✅ Responsive: en pantallas pequeñas vuelve a 1 columna */
+@media (max-width: 768px){
+    .twoCol{
+        grid-template-columns: 1fr;
+    }
 }
