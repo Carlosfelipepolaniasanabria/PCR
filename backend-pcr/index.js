@@ -5,15 +5,20 @@ const express = require('express');
 const cors = require('cors');
 
 require('./models/user.model.js');
+const usuarioRoutes = require("./router/usuarioRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-
+// ✅ PRIMERO middlewares
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// ✅ DESPUÉS rutas
+app.use("/api/usuarios", usuarioRoutes);
+
+// manejo de errores
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).json({
@@ -46,5 +51,3 @@ const startServer = async () => {
 };
 
 startServer();
-
-
