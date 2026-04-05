@@ -51,7 +51,7 @@ const Usuario = sequelize.define("Usuario", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  contrasena: {   // 🔥 NUEVO CAMPO
+  contrasena: {   
     type: DataTypes.STRING,
     allowNull: false,
   },
