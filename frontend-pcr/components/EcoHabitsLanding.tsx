@@ -9,6 +9,9 @@ import {
   BarChart3,
   Trophy,
   Menu,
+  Bell,
+  Target,
+  ArrowRight, 
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
@@ -160,26 +163,35 @@ export default function EcoHabitsLanding() {
         </section>
 
         {/* FEATURES */}
-        <section className="container mx-auto px-4 py-20 bg-secondary/30 rounded-3xl">
+<section className="container mx-auto px-4 py-20 bg-secondary/30 rounded-3xl">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl font-bold mb-4">Todo lo que necesitas para mejorar</h2>
+            <p className="text-muted-foreground text-lg">
+              Un sistema completo diseñado para motivarte y medir tu impacto real en el medio ambiente.
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <FeatureCard
-              icon={<BarChart3 />}
-              title="Dashboard"
-              description="Visualiza tu progreso."
-              color="bg-primary/10"
-            />
-            <FeatureCard
-              icon={<Trophy />}
-              title="Puntos"
-              description="Sube de nivel."
-              color="bg-secondary/60"
-            />
-            <FeatureCard
-              icon={<Leaf />}
-              title="Ranking"
-              description="Compite con otros."
-              color="bg-primary/10"
-            />
+            <FeatureCard icon={<BarChart3 className="h-8 w-8 text-[hsl(var(--chart-1))]" />} title="Dashboard de Indicadores"
+              description="Visualiza tu progreso con gráficos intuitivos y métricas de impacto personalizadas." color="bg-primary/10" />
+            <FeatureCard icon={<Trophy className="h-8 w-8 text-[hsl(var(--chart-2))]" />} title="Sistema de Puntos y Niveles"
+              description="Gamifica tu experiencia. Sube de nivel 'Semilla' a 'Árbol Milenario' cumpliendo metas." color="bg-secondary/60" />
+            <FeatureCard icon={<Leaf className="h-8 w-8 text-primary" />} title="Ranking Ecológico"
+              description="Compite amistosamente con amigos y comunidad para ver quién reduce más su huella." color="bg-primary/10" />
+            <FeatureCard icon={<Bell className="h-8 w-8 text-[hsl(var(--chart-3))]" />} title="Alertas Inteligentes"
+              description="Recibe recordatorios personalizados para tus hábitos de consumo y ahorro." color="bg-muted" />
+            <FeatureCard icon={<Target className="h-8 w-8 text-[hsl(var(--chart-4))]" />} title="Metas Ambientales"
+              description="Establece objetivos mensuales de reducción de residuos, agua y energía." color="bg-muted" />
+
+            <Card className="border-2 border-dashed border-border bg-transparent flex items-center justify-center hover:border-primary/50 transition-colors cursor-pointer group">
+              <CardContent className="flex flex-col items-center justify-center p-6 text-center pt-8">
+                <div className="h-14 w-14 rounded-2xl bg-muted flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <ArrowRight className="h-6 w-6 text-muted-foreground" />
+                </div>
+                <h3 className="font-bold text-lg mb-2">Descubre más</h3>
+                <p className="text-sm text-muted-foreground">Explora todas las funciones</p>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
@@ -188,14 +200,25 @@ export default function EcoHabitsLanding() {
   );
 }
 
-// ── FeatureCard ──────────────────────────────────────
-function FeatureCard({ icon, title, description, color }: FeatureCardProps) {
+function FeatureCard({
+  icon,
+  title,
+  description,
+  color,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  color: string;
+}) {
   return (
-    <Card>
-      <CardContent>
-        <div className={`h-14 w-14 ${color}`}>{icon}</div>
-        <h3>{title}</h3>
-        <p>{description}</p>
+    <Card className="border-border/60 bg-white/60 backdrop-blur-sm hover:shadow-xl transition-shadow">
+      <CardContent className="p-6 pt-8">
+        <div className={`h-14 w-14 rounded-2xl ${color} flex items-center justify-center mb-5`}>
+          {icon}
+        </div>
+        <h3 className="font-bold text-lg mb-2">{title}</h3>
+        <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
       </CardContent>
     </Card>
   );
