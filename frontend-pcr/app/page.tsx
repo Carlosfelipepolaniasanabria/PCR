@@ -1,7 +1,7 @@
 
 "use client";
 
-import EcoHabitsLanding from "@/components/EcoHabitsLanding";
+import EcoHabitsLanding from "../components/EcoHabitsLanding";
 import HomeContent from "./page/RegistroYLogin/RegistroYLogin";
 
 export default function Home() {
